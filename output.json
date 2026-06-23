@@ -1,0 +1,209 @@
+{
+  "id": "ROOT",
+  "label": "Photosynthesis",
+  "level": 0,
+  "centrality": 0.0,
+  "source_sentences": [
+    "Photosynthesis is the process by which green plants, algae, and some bacteria convert light energy into chemical energy.",
+    "Several environmental factors influence the rate of photosynthesis."
+  ],
+  "is_placeholder_group": false,
+  "children": [
+    {
+      "id": "L1_0",
+      "label": "Photosynthesis process",
+      "level": 1,
+      "centrality": 1.0,
+      "source_sentences": [
+        "Photosynthesis is the process by which green plants, algae, and some bacteria convert light energy into chemical energy.",
+        "This process occurs primarily in the chloroplasts of plant cells, specifically within structures called thylakoids."
+      ],
+      "is_placeholder_group": false,
+      "children": [
+        {
+          "id": "L1_0_group0",
+          "label": "light energy / green plants / plant cells",
+          "level": 2,
+          "centrality": 0.0,
+          "source_sentences": [],
+          "is_placeholder_group": true,
+          "children": [
+            {
+              "id": "L1_0_group0_light_energy",
+              "label": "Light energy absorption",
+              "level": 3,
+              "centrality": 0.0,
+              "source_sentences": [
+                "Photosynthesis is the process by which green plants, algae, and some bacteria convert light energy into chemical energy.",
+                "Chlorophyll, the green pigment found in chloroplasts, absorbs light energy, mainly in the red and blue wavelengths of the visible spectrum."
+              ],
+              "is_placeholder_group": false,
+              "children": []
+            },
+            {
+              "id": "L1_0_group0_green_plants",
+              "label": "Green plants role",
+              "level": 3,
+              "centrality": 0.0,
+              "source_sentences": [
+                "Photosynthesis is the process by which green plants, algae, and some bacteria convert light energy into chemical energy."
+              ],
+              "is_placeholder_group": false,
+              "children": []
+            },
+            {
+              "id": "L1_0_group0_plant_cells",
+              "label": "Plant cells involvement",
+              "level": 3,
+              "centrality": 0.0,
+              "source_sentences": [
+                "This process occurs primarily in the chloroplasts of plant cells, specifically within structures called thylakoids."
+              ],
+              "is_placeholder_group": false,
+              "children": []
+            },
+            {
+              "id": "L1_0_group0_chemical_energy",
+              "label": "Chemical energy production",
+              "level": 3,
+              "centrality": 0.0,
+              "source_sentences": [
+                "Photosynthesis is the process by which green plants, algae, and some bacteria convert light energy into chemical energy."
+              ],
+              "is_placeholder_group": false,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "L1_0_group1",
+          "label": "Additional wavelengths / accessory pigments",
+          "level": 2,
+          "centrality": 0.0,
+          "source_sentences": [],
+          "is_placeholder_group": true,
+          "children": [
+            {
+              "id": "L1_0_group1_additional_wavelengths",
+              "label": "Additional wavelengths absorption",
+              "level": 3,
+              "centrality": 0.0,
+              "source_sentences": [
+                "Carotenoids are accessory pigments that absorb additional wavelengths and protect the plant from excess light damage."
+              ],
+              "is_placeholder_group": false,
+              "children": []
+            },
+            {
+              "id": "L1_0_group1_accessory_pigments",
+              "label": "Accessory pigments role",
+              "level": 3,
+              "centrality": 0.0,
+              "source_sentences": [
+                "Carotenoids are accessory pigments that absorb additional wavelengths and protect the plant from excess light damage."
+              ],
+              "is_placeholder_group": false,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L1_1",
+      "label": "Light-Dependent Reactions",
+      "level": 1,
+      "centrality": 1.0,
+      "source_sentences": [
+        "The light-dependent reactions take place in the thylakoid membrane.",
+        "During this stage, light energy is absorbed and used to split water molecules into oxygen, protons, and electrons."
+      ],
+      "is_placeholder_group": false,
+      "children": [
+        {
+          "id": "L1_1_ATP_synthase",
+          "label": "ATP synthase",
+          "level": 2,
+          "centrality": 0.0,
+          "source_sentences": [
+            "The proton gradient created across the thylakoid membrane drives ATP synthase to produce ATP through chemiosmosis."
+          ],
+          "is_placeholder_group": false,
+          "children": []
+        },
+        {
+          "id": "L1_1_water_molecules",
+          "label": "Water Splitting",
+          "level": 2,
+          "centrality": 0.0,
+          "source_sentences": [
+            "During this stage, light energy is absorbed and used to split water molecules into oxygen, protons, and electrons."
+          ],
+          "is_placeholder_group": false,
+          "children": []
+        },
+        {
+          "id": "L1_1_ATP",
+          "label": "ATP Production",
+          "level": 2,
+          "centrality": 0.0,
+          "source_sentences": [
+            "The electrons move through the electron transport chain, generating ATP and NADPH.",
+            "The proton gradient created across the thylakoid membrane drives ATP synthase to produce ATP through chemiosmosis."
+          ],
+          "is_placeholder_group": false,
+          "children": []
+        },
+        {
+          "id": "L1_1_water",
+          "label": "Water Impact on Photosynthesis",
+          "level": 2,
+          "centrality": 0.0,
+          "source_sentences": [
+            "During this stage, light energy is absorbed and used to split water molecules into oxygen, protons, and electrons.",
+            "Water availability also impacts photosynthesis, since water is both a reactant and necessary for maintaining turgor pressure in leaves."
+          ],
+          "is_placeholder_group": false,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "L1_2",
+      "label": "Calvin Cycle",
+      "level": 1,
+      "centrality": 1.0,
+      "source_sentences": [
+        "The Calvin cycle, also known as the light-independent reactions, occurs in the stroma of the chloroplast.",
+        "It uses the ATP and NADPH produced during the light-dependent reactions to convert carbon dioxide into glucose."
+      ],
+      "is_placeholder_group": false,
+      "children": [
+        {
+          "id": "L1_2_carbon_fixation",
+          "label": "Carbon Fixation",
+          "level": 2,
+          "centrality": 0.0,
+          "source_sentences": [
+            "This process is also called carbon fixation.",
+            "The enzyme RuBisCO plays a critical role in catalyzing the first major step of carbon fixation."
+          ],
+          "is_placeholder_group": false,
+          "children": []
+        },
+        {
+          "id": "L1_2_carbon_dioxide",
+          "label": "Carbon Dioxide",
+          "level": 2,
+          "centrality": 0.0,
+          "source_sentences": [
+            "It uses the ATP and NADPH produced during the light-dependent reactions to convert carbon dioxide into glucose.",
+            "Carbon dioxide concentration affects the rate of the Calvin cycle, since carbon dioxide is a key reactant in carbon fixation."
+          ],
+          "is_placeholder_group": false,
+          "children": []
+        }
+      ]
+    }
+  ]
+}

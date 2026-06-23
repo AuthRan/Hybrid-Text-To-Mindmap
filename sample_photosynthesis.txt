@@ -1,0 +1,15 @@
+Photosynthesis
+
+Photosynthesis is the process by which green plants, algae, and some bacteria convert light energy into chemical energy. This process occurs primarily in the chloroplasts of plant cells, specifically within structures called thylakoids. Chlorophyll, the green pigment found in chloroplasts, absorbs light energy, mainly in the red and blue wavelengths of the visible spectrum. Carotenoids are accessory pigments that absorb additional wavelengths and protect the plant from excess light damage.
+
+Light-Dependent Reactions
+
+The light-dependent reactions take place in the thylakoid membrane. During this stage, light energy is absorbed and used to split water molecules into oxygen, protons, and electrons. This process is called photolysis. The electrons move through the electron transport chain, generating ATP and NADPH. Oxygen is released as a byproduct of this reaction. The proton gradient created across the thylakoid membrane drives ATP synthase to produce ATP through chemiosmosis.
+
+Calvin Cycle
+
+The Calvin cycle, also known as the light-independent reactions, occurs in the stroma of the chloroplast. It uses the ATP and NADPH produced during the light-dependent reactions to convert carbon dioxide into glucose. This process is also called carbon fixation. The enzyme RuBisCO plays a critical role in catalyzing the first major step of carbon fixation. The cycle has three phases: carbon fixation, reduction, and regeneration of ribulose bisphosphate.
+
+Factors Affecting Photosynthesis
+
+Several environmental factors influence the rate of photosynthesis. Light intensity directly affects the rate of the light-dependent reactions, with higher intensity generally increasing the rate up to a saturation point. Carbon dioxide concentration affects the rate of the Calvin cycle, since carbon dioxide is a key reactant in carbon fixation. Temperature affects enzyme activity, including RuBisCO, with most plants having an optimal temperature range. Water availability also impacts photosynthesis, since water is both a reactant and necessary for maintaining turgor pressure in leaves.

@@ -1,0 +1,16 @@
+spacy>=3.7,<3.9
+sentence-transformers>=3.0
+keybert>=0.8
+pytextrank>=3.3
+networkx>=3.0
+scikit-learn>=1.3
+numpy>=1.24
+fastcoref>=2.1.6   # optional, see note in pipeline.py header
+
+# After installing requirements, run:
+#   python -m spacy download en_core_web_trf      # accurate (transformer) pipeline, needs GPU for speed but runs on CPU
+#   # OR for a lighter/faster option:
+#   python -m spacy download en_core_web_sm
+#
+# sentence-transformers will auto-download its model from HuggingFace Hub
+# on first run (needs internet access to huggingface.co once, then it's cached locally).
