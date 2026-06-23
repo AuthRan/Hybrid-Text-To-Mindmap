@@ -237,6 +237,66 @@ def extract_keybert_candidates(
     return [ConceptCandidate(text=t, score=s, source="keybert") for t, s in results]
 
 
+def extract_named_entity_candidates(
+    doc: spacy.tokens.Doc,
+) -> list[ConceptCandidate]:
+    """Extracts named entities via spaCy NER as guaranteed concept candidates.
+    This catches specific important terms (enzyme names like RuBisCO, molecules
+    like NADPH/ATP, organisms like Carotenoids) that frequency-based methods
+    (TextRank) miss because they appear infrequently, and that KeyBERT's MMR
+    diversity filter can suppress when a semantically similar broader term
+    scores higher.
+
+    We use a fixed score of 0.5 (mid-range, normalized) so NER candidates
+    don't crowd out highly-ranked KeyBERT/TextRank results when merged, but
+    can survive into the final concept set if not already covered.
+
+    Entity types kept: chemicals, substances, organisms, processes, and
+    generic catch-all for domain-specific proper nouns (MISC/PROPN coverage).
+    Types excluded: dates, cardinal numbers, ordinals, locations (GPE/LOC),
+    persons (PERSON) -- these rarely belong in a science content mindmap.
+    """
+    KEEP_ENT_TYPES = {
+        "CHEM", "CHEMICAL", "ORG", "PRODUCT", "WORK_OF_ART",
+        # spaCy en_core_web_sm uses these broader categories:
+        "ORG", "GPE", "FAC", "PRODUCT", "EVENT", "LAW",
+        # for science text, MISC and bare PROPN tokens are often enzyme/molecule names
+    }
+    SKIP_ENT_TYPES = {"DATE", "TIME", "PERCENT", "MONEY", "QUANTITY",
+                      "ORDINAL", "CARDINAL", "PERSON", "GPE", "LOC", "FAC"}
+
+    seen: set[str] = set()
+    candidates: list[ConceptCandidate] = []
+
+    for ent in doc.ents:
+        if ent.label_ in SKIP_ENT_TYPES:
+            continue
+        text = ent.text.strip()
+        if len(text) < 2 or text.lower() in seen:
+            continue
+        seen.add(text.lower())
+        candidates.append(ConceptCandidate(text=text, score=0.5, source="ner"))
+
+    # Also scan for ALL-CAPS and mixed-case short tokens (e.g. ATP, NADPH,
+    # RuBisCO) that NER might miss because en_core_web_sm's NER is trained
+    # on news, not science. These are almost always molecule/enzyme names.
+    for token in doc:
+        if token.is_stop or token.is_punct or token.is_space:
+            continue
+        t = token.text.strip()
+        if len(t) < 2 or t.lower() in seen:
+            continue
+        # ALL-CAPS acronym (ATP, NADPH, DNA) or CamelCase molecule (RuBisCO)
+        is_allcaps_acronym = t.isupper() and len(t) >= 2
+        is_camelcase = (not t.isupper() and not t.islower() and
+                        t[0].isupper() and any(c.isupper() for c in t[1:]))
+        if is_allcaps_acronym or is_camelcase:
+            seen.add(t.lower())
+            candidates.append(ConceptCandidate(text=t, score=0.5, source="ner"))
+
+    return candidates
+
+
 def extract_textrank_candidates(
     doc: spacy.tokens.Doc,
     top_n: int = 25,

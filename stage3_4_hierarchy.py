@@ -517,12 +517,25 @@ def _attach_clustered_children(
     parent_id: str,
     parent_level: int,
     n_clusters: int,
+    max_direct_attach: int = 6,
 ) -> None:
-    if len(concepts) <= 2 or n_clusters <= 1:
+    """Attaches concept nodes as children of parent_id, optionally grouping
+    them into intermediate cluster nodes.
+
+    Key design decision: only create intermediate grouping nodes (the ones
+    that get slash placeholder labels) when a cluster is large enough to
+    NEED grouping (> max_direct_attach members total, or a single cluster
+    has > 4 members). For small concept sets, attach directly -- a 3-node
+    intermediate group adds visual clutter and creates the slash-label
+    problem without giving students any useful organizational benefit.
+    """
+    # For small concept sets: attach directly, no clustering needed
+    if len(concepts) <= max_direct_attach or n_clusters <= 1:
         for c in concepts:
             child_id = f"{parent_id}_{_safe_id(c)}"
-            tree.add_node(child_id, label=c, level=parent_level + 1)
-            tree.add_edge(parent_id, child_id)
+            if child_id not in tree:
+                tree.add_node(child_id, label=c, level=parent_level + 1)
+                tree.add_edge(parent_id, child_id)
         return
 
     embeddings = embedder.encode(concepts, normalize_embeddings=True)
@@ -534,26 +547,29 @@ def _attach_clustered_children(
         clusters.setdefault(lbl, []).append(concept)
 
     for cluster_idx, members in clusters.items():
-        if len(members) == 1:
-            # singleton cluster: attach directly, no intermediate grouping node
-            child_id = f"{parent_id}_{_safe_id(members[0])}"
-            tree.add_node(child_id, label=members[0], level=parent_level + 1)
-            tree.add_edge(parent_id, child_id)
+        if len(members) <= 3:
+            # Small cluster: attach members directly to parent -- no intermediate
+            # grouping node. This eliminates the slash-label problem entirely for
+            # small clusters since the SLM was reliably skipping group-node relabeling
+            # even when asked to do it (observed: SLM edited children correctly but
+            # left the "concept1 / concept2 / concept3" group label unchanged).
+            for m in members:
+                leaf_id = f"{parent_id}_{_safe_id(m)}"
+                if leaf_id not in tree:
+                    tree.add_node(leaf_id, label=m, level=parent_level + 1)
+                    tree.add_edge(parent_id, leaf_id)
         else:
-            # multi-member cluster: create an intermediate node. Its label is
-            # a placeholder ("concept1 / concept2 / ...") -- Stage 6 (SLM)
-            # should replace this with a real synthesized label, since
-            # picking a good cluster label from raw phrases alone is exactly
-            # the kind of task an SLM is good at and classical methods
-            # aren't.
+            # Large cluster (4+ members): an intermediate grouping node is
+            # genuinely useful here. SLM will rewrite the placeholder label.
             group_id = f"{parent_id}_group{cluster_idx}"
             placeholder_label = " / ".join(members[:3])
             tree.add_node(group_id, label=placeholder_label, level=parent_level + 1, is_placeholder_group=True)
             tree.add_edge(parent_id, group_id)
             for m in members:
                 leaf_id = f"{group_id}_{_safe_id(m)}"
-                tree.add_node(leaf_id, label=m, level=parent_level + 2)
-                tree.add_edge(group_id, leaf_id)
+                if leaf_id not in tree:
+                    tree.add_node(leaf_id, label=m, level=parent_level + 2)
+                    tree.add_edge(group_id, leaf_id)
 
 
 def _most_similar_by_embedding(concept: str, candidates: list[str], embedder: SentenceTransformer) -> str:

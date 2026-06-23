@@ -18,6 +18,7 @@ from stage1_2_preprocessing import (
     build_keybert,
     build_nlp_pipeline,
     extract_keybert_candidates,
+    extract_named_entity_candidates,
     extract_textrank_candidates,
     filter_concept_candidates,
     merge_concept_candidates,
@@ -64,7 +65,10 @@ def run_pipeline(
     full_doc = nlp(pre.raw_text)
     kb_cands = extract_keybert_candidates(pre.raw_text, kw_model, top_n=keybert_top_n)
     tr_cands = extract_textrank_candidates(full_doc, top_n=textrank_top_n)
-    concept_candidates = merge_concept_candidates(kb_cands, tr_cands)
+    ner_cands = extract_named_entity_candidates(full_doc)
+    print(f"  NER found {len(ner_cands)} named entity / acronym candidates: "
+          f"{[c.text for c in ner_cands[:10]]}")
+    concept_candidates = merge_concept_candidates(kb_cands, tr_cands + ner_cands)
     concept_candidates = filter_concept_candidates(concept_candidates, nlp)
     print(f"  {len(concept_candidates)} merged concept candidates (after POS filter)")
     for c in concept_candidates[:15]:

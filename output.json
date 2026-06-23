@@ -21,91 +21,71 @@
       "is_placeholder_group": false,
       "children": [
         {
-          "id": "L1_0_group0",
-          "label": "light energy / green plants / plant cells",
+          "id": "L1_0_light_energy",
+          "label": "light absorption",
           "level": 2,
           "centrality": 0.0,
-          "source_sentences": [],
-          "is_placeholder_group": true,
-          "children": [
-            {
-              "id": "L1_0_group0_light_energy",
-              "label": "Light energy absorption",
-              "level": 3,
-              "centrality": 0.0,
-              "source_sentences": [
-                "Photosynthesis is the process by which green plants, algae, and some bacteria convert light energy into chemical energy.",
-                "Chlorophyll, the green pigment found in chloroplasts, absorbs light energy, mainly in the red and blue wavelengths of the visible spectrum."
-              ],
-              "is_placeholder_group": false,
-              "children": []
-            },
-            {
-              "id": "L1_0_group0_green_plants",
-              "label": "Green plants role",
-              "level": 3,
-              "centrality": 0.0,
-              "source_sentences": [
-                "Photosynthesis is the process by which green plants, algae, and some bacteria convert light energy into chemical energy."
-              ],
-              "is_placeholder_group": false,
-              "children": []
-            },
-            {
-              "id": "L1_0_group0_plant_cells",
-              "label": "Plant cells involvement",
-              "level": 3,
-              "centrality": 0.0,
-              "source_sentences": [
-                "This process occurs primarily in the chloroplasts of plant cells, specifically within structures called thylakoids."
-              ],
-              "is_placeholder_group": false,
-              "children": []
-            },
-            {
-              "id": "L1_0_group0_chemical_energy",
-              "label": "Chemical energy production",
-              "level": 3,
-              "centrality": 0.0,
-              "source_sentences": [
-                "Photosynthesis is the process by which green plants, algae, and some bacteria convert light energy into chemical energy."
-              ],
-              "is_placeholder_group": false,
-              "children": []
-            }
-          ]
+          "source_sentences": [
+            "Photosynthesis is the process by which green plants, algae, and some bacteria convert light energy into chemical energy.",
+            "Chlorophyll, the green pigment found in chloroplasts, absorbs light energy, mainly in the red and blue wavelengths of the visible spectrum."
+          ],
+          "is_placeholder_group": false,
+          "children": []
         },
         {
-          "id": "L1_0_group1",
-          "label": "Additional wavelengths / accessory pigments",
+          "id": "L1_0_green_plants",
+          "label": "green plants",
           "level": 2,
           "centrality": 0.0,
-          "source_sentences": [],
-          "is_placeholder_group": true,
-          "children": [
-            {
-              "id": "L1_0_group1_additional_wavelengths",
-              "label": "Additional wavelengths absorption",
-              "level": 3,
-              "centrality": 0.0,
-              "source_sentences": [
-                "Carotenoids are accessory pigments that absorb additional wavelengths and protect the plant from excess light damage."
-              ],
-              "is_placeholder_group": false,
-              "children": []
-            },
-            {
-              "id": "L1_0_group1_accessory_pigments",
-              "label": "Accessory pigments role",
-              "level": 3,
-              "centrality": 0.0,
-              "source_sentences": [
-                "Carotenoids are accessory pigments that absorb additional wavelengths and protect the plant from excess light damage."
-              ],
-              "is_placeholder_group": false,
-              "children": []
-            }
-          ]
+          "source_sentences": [
+            "Photosynthesis is the process by which green plants, algae, and some bacteria cgionvert light energy into chemical energy."
+          ],
+          "is_placeholder_group": false,
+          "children": []
+        },
+        {
+          "id": "L1_0_plant_cells",
+          "label": "plant cells",
+          "level": 2,
+          "centrality": 0.0,
+          "source_sentences": [
+            "This process occurs primarily in the chloroplasts of plant cells, specifically within structures called thylakoids."
+          ],
+          "is_placeholder_group": false,
+          "children": []
+        },
+        {
+          "id": "L1_0_chemical_energy",
+          "label": "chemical energy production",
+          "level": 2,
+          "centrality": 0.0,
+          "source_sentences": [
+            "Photosynthesis is the process by which green plants, algae, and some bacteria convert light energy into chemical energy."
+          ],
+          "is_placeholder_group": false,
+          "children": []
+        },
+        {
+          "id": "L1_0_additional_wavelengths",
+          "label": "additional light absorption",
+          "level": 2,
+          "centrality": 0.0,
+          "source_sentences": [
+            "Carotenoids are accessory pigments that absorb additional wavelengths and protect the plant from excess light damage."
+          ],
+          "is_placeholder_group": false,
+          "children": []
+        },
+        {
+          "id": "L1_0_accessory_pigments",
+          "label": "accessory pigments",
+          "level": 2,
+          "centrality": 0.0,
+          "source_sentences": [
+            "Carotenoids are accessory pigments that absorb additional wavelengths and protect the plant from excess light damage."
+          ],
+          "is_placeholder_group": false,
+          "children": []
         }
       ]
     },
@@ -121,8 +101,32 @@
       "is_placeholder_group": false,
       "children": [
         {
+          "id": "L1_1_ATP",
+          "label": "ATP Production",
+          "level": 2,
+          "centrality": 0.0,
+          "source_sentences": [
+            "The electrons move through the electron transport chain, generating ATP and NADPH.",
+            "The proton gradient created across the thylakoid membrane drives ATP synthase to produce ATP through chemiosmosis."
+          ],
+          "is_placeholder_group": false,
+          "children": []
+        },
+        {
+          "id": "L1_1_NADPH",
+          "label": "NADPH Production",
+          "level": 2,
+          "centrality": 0.0,
+          "source_sentences": [
+            "The electrons move through the electron transport chain, generating ATP and NADPH.",
+            "It uses the ATP and NADPH produced during the light-dependent reactions to convert carbon dioxide into glucose."
+          ],
+          "is_placeholder_group": false,
+          "children": []
+        },
+        {
           "id": "L1_1_ATP_synthase",
-          "label": "ATP synthase",
+          "label": "ATP Synthase Activity",
           "level": 2,
           "centrality": 0.0,
           "source_sentences": [
@@ -143,20 +147,8 @@
           "children": []
         },
         {
-          "id": "L1_1_ATP",
-          "label": "ATP Production",
-          "level": 2,
-          "centrality": 0.0,
-          "source_sentences": [
-            "The electrons move through the electron transport chain, generating ATP and NADPH.",
-            "The proton gradient created across the thylakoid membrane drives ATP synthase to produce ATP through chemiosmosis."
-          ],
-          "is_placeholder_group": false,
-          "children": []
-        },
-        {
           "id": "L1_1_water",
-          "label": "Water Impact on Photosynthesis",
+          "label": "Water Usage in Photosynthesis",
           "level": 2,
           "centrality": 0.0,
           "source_sentences": [
@@ -180,8 +172,20 @@
       "is_placeholder_group": false,
       "children": [
         {
+          "id": "L1_2_RuBisCO",
+          "label": "RuBisCO enzyme",
+          "level": 2,
+          "centrality": 0.0,
+          "source_sentences": [
+            "The enzyme RuBisCO plays a critical role in catalyzing the first major step of carbon fixation.",
+            "Temperature affects enzyme activity, including RuBisCO, with most plants having an optimal temperature range."
+          ],
+          "is_placeholder_group": false,
+          "children": []
+        },
+        {
           "id": "L1_2_carbon_fixation",
-          "label": "Carbon Fixation",
+          "label": "Carbon Fixation Process",
           "level": 2,
           "centrality": 0.0,
           "source_sentences": [
@@ -193,7 +197,7 @@
         },
         {
           "id": "L1_2_carbon_dioxide",
-          "label": "Carbon Dioxide",
+          "label": "Carbon Dioxide Utilization",
           "level": 2,
           "centrality": 0.0,
           "source_sentences": [
